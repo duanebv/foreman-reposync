@@ -49,7 +49,7 @@ function get_server_repos () {
 		PULPCORE_VERSION=$(dnf -v --disablerepo=* --enablerepo=pulpcore repolist 2>/dev/null | grep "^Repo-baseurl" | grep -P -o "\d+[.]\d+")
 		[ $? -ne 0 ] && (echo "Error occurred obtaining Pulpcore version.  Exiting..."; exit -1)
 
-		# Create local copies of the repositories needed for an offline installation of Foremane with Katello
+		# Create local copies of the repositories needed for an offline installation of Foreman with Katello
 		dnf reposync --remote-time --delete --norepopath --download-metadata --downloadcomps --download-path ${TEMPDIR}/Foreman/releases/${FOREMAN_VERSION}/${DIST}/${ARCH} --repo foreman
 		dnf reposync --remote-time --delete --norepopath --download-metadata --downloadcomps --download-path ${TEMPDIR}/Foreman/plugins/${FOREMAN_VERSION}/${DIST}/${ARCH} --repo foreman-plugins
 		dnf reposync --remote-time --delete --norepopath --download-metadata --downloadcomps --download-path ${TEMPDIR}/Foreman/katello/${KATELLO_VERSION}/katello/${DIST}/${ARCH} --repo katello
