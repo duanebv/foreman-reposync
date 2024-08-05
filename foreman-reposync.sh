@@ -2,7 +2,7 @@
 
 # Written by Duane B. Vassar, Aug 2024.
 #
-# This script will download all Foreman repositories needed to install Foremane with Katello in an offline environment
+# This script will download all Foreman repositories needed to install Foreman with Katello in an offline environment.
 #
 # This script expects there to be no current repositories for Foreman defined on the downloading host.
 # The repositories will be installed and removed during the download process for each distribution defined.
