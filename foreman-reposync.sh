@@ -107,22 +107,22 @@ function copy_repos_to_share () {
 	[ ! -e ${REPODIR}/client/${FOREMAN_VERSION} ] && mkdir -p ${REPODIR}/client/${FOREMAN_VERSION}
 	
 	printf "\nCopying releases repository to share...\n"
-	rsync -av ${TEMPDIR}/Foreman/releases/${FOREMAN_VERSION}/ ${REPODIR}/releases/${FOREMAN_VERSION}
+	rsync -av --delete ${TEMPDIR}/Foreman/releases/${FOREMAN_VERSION}/ ${REPODIR}/releases/${FOREMAN_VERSION}
 	
 	printf "\nCopying plugins repository to share...\n"
-	rsync -av ${TEMPDIR}/Foreman/plugins/${FOREMAN_VERSION}/ ${REPODIR}/plugins/${FOREMAN_VERSION}
+	rsync -av --delete ${TEMPDIR}/Foreman/plugins/${FOREMAN_VERSION}/ ${REPODIR}/plugins/${FOREMAN_VERSION}
 	
 	printf "\nCopying katello repository to share...\n"
-	rsync -av ${TEMPDIR}/Foreman/katello/${KATELLO_VERSION}/ ${REPODIR}/katello/${KATELLO_VERSION}
+	rsync -av --delete ${TEMPDIR}/Foreman/katello/${KATELLO_VERSION}/ ${REPODIR}/katello/${KATELLO_VERSION}
 	
 	printf "\nCopying candlepin repository to share...\n"
-	rsync -av ${TEMPDIR}/Foreman/candlepin/${CANDLEPIN_VERSION}/ ${REPODIR}/candlepin/${CANDLEPIN_VERSION}
+	rsync -av --delete ${TEMPDIR}/Foreman/candlepin/${CANDLEPIN_VERSION}/ ${REPODIR}/candlepin/${CANDLEPIN_VERSION}
 	
 	printf "\nCopying pulpcore repository to share...\n"
-	rsync -av ${TEMPDIR}/Foreman/pulpcore/${PULPCORE_VERSION}/ ${REPODIR}/pulpcore/${PULPCORE_VERSION}
+	rsync -av --delete ${TEMPDIR}/Foreman/pulpcore/${PULPCORE_VERSION}/ ${REPODIR}/pulpcore/${PULPCORE_VERSION}
 	
 	printf "\nCopying client repository to share...\n"
-	rsync -av ${TEMPDIR}/Foreman/client/${FOREMAN_VERSION}/ ${REPODIR}/client/${FOREMAN_VERSION}
+	rsync -av --delete ${TEMPDIR}/Foreman/client/${FOREMAN_VERSION}/ ${REPODIR}/client/${FOREMAN_VERSION}
 }
 
 get_server_repos
